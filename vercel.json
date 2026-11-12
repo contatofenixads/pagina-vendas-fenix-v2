@@ -1,8 +1,6 @@
 {
   "name": "fenix-ads-vendas",
   "version": 2,
-  "public": true,
-  "buildCommand": "echo '✅ Build completo'",
   "framework": "static",
   "cleanUrls": true,
   "trailingSlash": false,
@@ -34,8 +32,5 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "env": {
-    "WHATSAPP_NUMBER": "@whatsapp_number"
-  }
+  ]
 }
