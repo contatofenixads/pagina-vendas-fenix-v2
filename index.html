@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apareça no Google em 7 dias | Agência Fênix Ads</title>
+    <meta name="description" content="Seu negócio no Google e recebendo clientes. Ficha no Google, Site profissional e Link na Bio. MEIs e lojistas de Limeira, Americana, Piracicaba e Campinas.">
+    <meta property="og:title" content="Apareça no Google em 7 dias | Agência Fênix Ads">
+    <meta property="og:description" content="Transforme clientes em compras. Apareça no Google, receba clientes pelo WhatsApp.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630">
+    <meta name="theme-color" content="#667eea">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        /* UTILITÁRIOS */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-white {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-white:hover {
+            background: #f8f9fa;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            font-size: 0.95em;
+        }
+
+        header nav a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subheadline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .hero .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .hero .btn {
+            padding: 16px 36px;
+            font-size: 1.05em;
+        }
+
+        .hero-image {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero .subheadline {
+                font-size: 1.1em;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+        }
+
+        /* PROBLEM SECTION */
+        .problems {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            font-weight: 800;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid #dc3545;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .problem-card h3 {
+            color: #dc3545;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .problem-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* SOLUTION SECTION */
+        .solutions {
+            padding: 80px 0;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #e8ebf7;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .solution-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .solution-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .solution-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .solution-features {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .solution-features li {
+            list-style: none;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: #666;
+        }
+
+        .solution-features li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #28a745;
+            box-shadow: 0 15px 40px rgba(40, 167, 69, 0.2);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "MAIS VENDIDO";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #28a745;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 700;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .pricing-card .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .pricing-card .price {
+            font-size: 2.5em;
+            color: #667eea;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+
+        .pricing-card .period {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .pricing-card ul {
+            text-align: left;
+            margin-bottom: 30px;
+            list-style: none;
+        }
+
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e8ebf7;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .form-section .section-title {
+            color: white;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 12px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e8ebf7;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-container .btn {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question::after {
+            content: "▼";
+            font-size: 0.8em;
+            color: #667eea;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotateZ(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #666;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px 20px;
+            max-height: 500px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: #999;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .solution-grid,
+            .pricing-grid,
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            header nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="logo">🔥 Fênix Ads</div>
+            <nav>
+                <a href="#problema">Problema</a>
+                <a href="#solucao">Solução</a>
+                <a href="#precos">Preços</a>
+                <a href="#form">Começar</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1>Apareça no Google em 7 dias</h1>
+            <p class="subheadline">Seu negócio sendo encontrado por clientes que estão procurando no Google, Maps e Instagram</p>
+            <div class="cta-buttons">
+                <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Descobrir Meu Plano</button>
+                <button class="btn btn-white">Conhecer Mais</button>
+            </div>
+            <div class="hero-image">
+                <div style="background: rgba(255,255,255,0.2); padding: 40px; border-radius: 8px; text-align: center;">
+                    <p style="font-size: 3em;">📱 💼 🗺️</p>
+                    <p style="margin-top: 10px;">Google • Maps • Instagram</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="problems" id="problema">
+        <div class="container">
+            <h2 class="section-title">Qual é seu maior problema?</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>❌ Clientes não encontram você</h3>
+                    <p>Seu concorrente aparece no Google. Você fica invisível para 80% dos clientes que buscam no celular.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ Poucos clientes chegam</h3>
+                    <p>Recebe só aqueles que alguém indica. Deixa muito dinheiro na mesa esperando por referência.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>❌ Não sabe por onde começar</h3>
+                    <p>Tentou algo que não funcionou. Não sabe se é site, anúncio, rede social ou o quê fazer primeiro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUÇÃO -->
+    <section class="solutions" id="solucao">
+        <div class="container">
+            <h2 class="section-title">A solução é simples</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">🗺️</div>
+                    <h3>Google Meu Negócio</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Apareça no mapa quando alguém procura por um negócio como o seu perto de casa</p>
+                    <ul class="solution-features">
+                        <li>Seu endereço no Maps</li>
+                        <li>Telefone e horário</li>
+                        <li>Fotos do seu negócio</li>
+                        <li>Avaliações de clientes</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">🌐</div>
+                    <h3>Site Profissional</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Um site que aparece no Google quando procuram pelo seu tipo de serviço</p>
+                    <ul class="solution-features">
+                        <li>Site com design moderno</li>
+                        <li>Botão direto WhatsApp</li>
+                        <li>Domínio + hospedagem</li>
+                        <li>Otimizado para Google</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon">📲</div>
+                    <h3>Link na Bio</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Um link que leva do Instagram para seu site e WhatsApp</p>
+                    <ul class="solution-features">
+                        <li>Link único na bio</li>
+                        <li>Seus links todos juntos</li>
+                        <li>Sem digitar WhatsApp</li>
+                        <li>Mais profissional</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREÇOS -->
+    <section class="pricing" id="precos">
+        <div class="container">
+            <h2 class="section-title">Escolha seu plano</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>🎁 O Básico</h3>
+                    <p class="subtitle">Google Meu Negócio + Link na Bio</p>
+                    <div class="price">R$ 297</div>
+                    <p class="period">ou 3x R$ 99</p>
+                    <ul>
+                        <li>Google Meu Negócio</li>
+                        <li>Link na Bio</li>
+                        <li>Suporte por 30 dias</li>
+                        <li>Entrega em 2-3 dias</li>
+                    </ul>
+                    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Começar Agora</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>🎁 O Completo</h3>
+                    <p class="subtitle">Google + Site + Link na Bio</p>
+                    <div class="price">R$ 1.090</div>
+                    <p class="period">ou 5x R$ 218</p>
+                    <ul>
+                        <li>Google Meu Negócio</li>
+                        <li>Site Profissional</li>
+                        <li>Link na Bio</li>
+                        <li>Suporte por 90 dias</li>
+                        <li>Entrega em 5-7 dias</li>
+                    </ul>
+                    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Escolher Este</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>♻️ Manutenção</h3>
+                    <p class="subtitle">Manter seu site funcionando</p>
+                    <div class="price">R$ 79</div>
+                    <p class="period">por mês</p>
+                    <ul>
+                        <li>Domínio renovado</li>
+                        <li>Hospedagem ativa</li>
+                        <li>Suporte técnico</li>
+                        <li>Sem compromisso</li>
+                    </ul>
+                    <button class="btn btn-white" onclick="document.getElementById('form').scrollIntoView()">Contratar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <h2 class="section-title">Qual plano é melhor para você?</h2>
+            <div class="form-container">
+                <form id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Seu Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Seu WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(85) 9 8888-8888" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Tipo de Negócio</label>
+                        <input type="text" id="business" name="business" placeholder="Ex: Padaria, Dentista, Salão">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Sua Cidade</label>
+                        <select id="city" name="city" required>
+                            <option value="">Selecione...</option>
+                            <option value="limeira">Limeira</option>
+                            <option value="americana">Americana</option>
+                            <option value="piracicaba">Piracicaba</option>
+                            <option value="campinas">Campinas</option>
+                            <option value="outra">Outra região</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="plan">Qual plano?</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Selecione...</option>
+                            <option value="basico">O Básico - R$ 297</option>
+                            <option value="completo">O Completo - R$ 1.090</option>
+                            <option value="manutencao">Manutenção - R$ 79/mês</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn">Enviar para WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo até aparecer no Google?</div>
+                    <div class="faq-answer">
+                        <p>Google Meu Negócio: 3-7 dias. Site profissional: 15-30 dias. Mas seu negócio já começa a aparecer em buscas locais em poucos dias.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">E se não gostar?</div>
+                    <div class="faq-answer">
+                        <p>Você tem 7 dias para pedir alterações. Se realmente não se encaixar, tem direito a reembolso completo. Sem pegadinha.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Como é o suporte?</div>
+                    <div class="faq-answer">
+                        <p>Suporte via WhatsApp 24h. Você fala conosco no mesmo número que atendemos seus clientes. Resposta rápida e direta.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Preciso saber tecnologia?</div>
+                    <div class="faq-answer">
+                        <p>Não! A gente faz tudo. Você só precisa responder algumas perguntas e fornecer fotos/informações do seu negócio.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Que cidades atende?</div>
+                    <div class="faq-answer">
+                        <p>Limeira, Americana, Piracicaba, Campinas e região. Se sua cidade não está na lista, mande mensagem de qualquer forma.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p><strong>Agência Fênix Ads</strong></p>
+            <p>Transformando pequenos negócios em presença online poderosa</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">© 2026 Fênix Ads. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form Submit
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const business = document.getElementById('business').value;
+            const city = document.getElementById('city').value;
+            const plan = document.getElementById('plan').value;
+
+            const message = `Olá! Meu nome é ${name}. Tenho um(a) ${business} em ${city}. Gostaria de saber mais sobre o plano: ${plan}. Meu WhatsApp: ${phone}`;
+
+            const whatsappLink = `https://wa.me/5585988888888?text=${encodeURIComponent(message)}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+</body>
+</html>
