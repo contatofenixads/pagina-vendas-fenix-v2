@@ -1,7 +1,4 @@
 {
-  "name": "fenix-ads-vendas",
-  "version": 2,
-  "framework": "static",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
@@ -25,12 +22,6 @@
           "value": "1; mode=block"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
     }
   ]
 }
