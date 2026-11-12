@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apareça no Google em 7 dias | Agência Fênix Ads</title>
-    <meta name="description" content="Seu negócio no Google e recebendo clientes. Ficha no Google, Site profissional e Link na Bio. MEIs e lojistas de Limeira, Americana, Piracicaba e Campinas.">
-    <meta property="og:title" content="Apareça no Google em 7 dias | Agência Fênix Ads">
-    <meta property="og:description" content="Transforme clientes em compras. Apareça no Google, receba clientes pelo WhatsApp.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630">
-    <meta name="theme-color" content="#667eea">
+    <meta name="description" content="Transforme seu negócio em 7 dias. Site profissional, Google Meu Negócio e estratégia digital. MEIs e lojistas de Limeira, Americana, Piracicaba e Campinas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --secondary: #f093fb;
+            --success: #10b981;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --light: #f8fafc;
         }
 
         html {
@@ -26,56 +33,89 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1f2937;
             background: #fff;
+            overflow-x: hidden;
         }
 
-        /* UTILITÁRIOS */
+        /* CONTAINER */
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 14px 32px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
+        /* ANIMAÇÕES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .btn-white {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .btn-white:hover {
-            background: #f8f9fa;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.6); }
+        }
+
+        .animate-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-left {
+            animation: slideInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-right {
+            animation: slideInRight 0.8s ease-out forwards;
         }
 
         /* HEADER */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.15);
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         header .container {
@@ -85,412 +125,638 @@
         }
 
         .logo {
-            font-size: 1.5em;
-            font-weight: 800;
+            font-size: 1.8em;
+            font-weight: 900;
             letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         header nav a {
-            color: white;
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            margin-left: 30px;
-            font-weight: 500;
-            transition: opacity 0.3s;
+            margin-left: 35px;
+            font-weight: 600;
             font-size: 0.95em;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        header nav a:hover {
-            opacity: 0.8;
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+        /* BOTÕES */
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            font-weight: 700;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-lg {
+            padding: 18px 40px;
+            font-size: 1.1em;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content .subheadline {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.6;
+            font-weight: 300;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 50px;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .hero-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .hero-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
         }
 
         @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2em;
+            }
+
+            .hero-content .subheadline {
+                font-size: 1.1em;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
             header nav {
                 display: none;
             }
         }
 
-        /* HERO */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.8em;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero .subheadline {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.95;
-            line-height: 1.5;
-        }
-
-        .hero .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-
-        .hero .btn {
-            padding: 16px 36px;
-            font-size: 1.05em;
-        }
-
-        .hero-image {
-            margin-top: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .hero .subheadline {
-                font-size: 1.1em;
-            }
-
-            .hero {
-                padding: 50px 0;
-            }
-        }
-
-        /* PROBLEM SECTION */
-        .problems {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
+        /* SECTION TITULO */
         .section-title {
             text-align: center;
-            font-size: 2.2em;
-            font-weight: 800;
-            margin-bottom: 50px;
-            color: #333;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .section-title h2 {
+            font-size: 2.8em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title p {
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* PROBLEMAS */
+        .problems {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            position: relative;
         }
 
         .problems-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .problem-card {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 5px solid #dc3545;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #ef4444;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out backwards;
         }
 
+        .problem-card:nth-child(2) { animation-delay: 0.1s; }
+        .problem-card:nth-child(3) { animation-delay: 0.2s; }
+
         .problem-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-left-color: var(--primary);
+        }
+
+        .problem-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
         }
 
         .problem-card h3 {
-            color: #dc3545;
-            margin-bottom: 10px;
-            font-size: 1.2em;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1f2937;
         }
 
         .problem-card p {
             color: #666;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
-        /* SOLUTION SECTION */
+        /* SOLUÇÕES */
         .solutions {
-            padding: 80px 0;
+            padding: 100px 0;
+            background: white;
         }
 
-        .solution-grid {
+        .solutions-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
             margin-bottom: 60px;
         }
 
         .solution-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-            padding: 40px;
-            border-radius: 12px;
-            border: 2px solid #e8ebf7;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+            padding: 50px 35px;
+            border-radius: 16px;
+            border: 2px solid #e0e7ff;
             text-align: center;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out backwards;
         }
 
+        .solution-card:nth-child(2) { animation-delay: 0.1s; }
+        .solution-card:nth-child(3) { animation-delay: 0.2s; }
+
         .solution-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.15);
-            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.15);
+            transform: translateY(-10px);
         }
 
         .solution-icon {
-            font-size: 3.5em;
-            margin-bottom: 20px;
+            font-size: 4.5em;
+            margin-bottom: 25px;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: float 3s ease-in-out infinite;
         }
 
         .solution-card h3 {
-            font-size: 1.4em;
+            font-size: 1.5em;
+            font-weight: 800;
             margin-bottom: 15px;
-            color: #333;
+            color: var(--dark);
+        }
+
+        .solution-card p {
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 300;
+            line-height: 1.7;
         }
 
         .solution-features {
             text-align: left;
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .solution-features li {
             list-style: none;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #555;
+            font-weight: 500;
         }
 
-        .solution-features li:before {
+        .solution-features li::before {
             content: "✓";
-            color: #28a745;
+            color: var(--success);
             font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.3em;
+            margin-right: 12px;
+            font-size: 1.4em;
         }
 
-        /* PRICING SECTION */
+        /* PRICING */
         .pricing {
-            padding: 80px 0;
-            background: #f8f9fa;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
         }
 
         .pricing-card {
             background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
+            padding: 45px 35px;
+            border-radius: 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             border: 2px solid transparent;
+            transition: all 0.3s ease;
             position: relative;
+            animation: fadeInUp 0.8s ease-out backwards;
         }
 
+        .pricing-card:nth-child(2) { animation-delay: 0.1s; }
+        .pricing-card:nth-child(3) { animation-delay: 0.2s; }
+
         .pricing-card.featured {
-            border-color: #28a745;
-            box-shadow: 0 15px 40px rgba(40, 167, 69, 0.2);
-            transform: scale(1.05);
+            border-color: var(--success);
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.25);
+            transform: scale(1.08);
         }
 
         .pricing-card.featured::before {
-            content: "MAIS VENDIDO";
+            content: "⭐ MAIS VENDIDO";
             position: absolute;
-            top: -15px;
+            top: -18px;
             left: 50%;
             transform: translateX(-50%);
-            background: #28a745;
+            background: linear-gradient(135deg, var(--success), #059669);
             color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8em;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85em;
             font-weight: 700;
         }
 
+        .pricing-card:hover {
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+            transform: translateY(-5px) scale(1.02);
+        }
+
         .pricing-card h3 {
-            font-size: 1.3em;
+            font-size: 1.4em;
+            font-weight: 800;
             margin-bottom: 10px;
-            color: #333;
+            color: var(--dark);
         }
 
         .pricing-card .subtitle {
-            color: #666;
-            margin-bottom: 20px;
+            color: #999;
+            margin-bottom: 25px;
             font-size: 0.95em;
         }
 
         .pricing-card .price {
-            font-size: 2.5em;
-            color: #667eea;
-            font-weight: 800;
-            margin: 20px 0;
+            font-size: 3em;
+            color: var(--primary);
+            font-weight: 900;
+            margin: 25px 0;
         }
 
         .pricing-card .period {
             color: #999;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            font-weight: 500;
         }
 
         .pricing-card ul {
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             list-style: none;
         }
 
         .pricing-card li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e8ebf7;
-            color: #666;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
             display: flex;
             align-items: center;
+            font-weight: 500;
         }
 
         .pricing-card li:last-child {
             border-bottom: none;
         }
 
-        .pricing-card li:before {
+        .pricing-card li::before {
             content: "✓";
-            color: #28a745;
+            color: var(--success);
             font-weight: bold;
-            margin-right: 10px;
+            margin-right: 12px;
             font-size: 1.2em;
         }
 
-        @media (max-width: 768px) {
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-        }
-
-        /* FORM SECTION */
+        /* FORM */
         .form-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--secondary) 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .form-section .section-title {
-            color: white;
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
         }
 
         .form-container {
             max-width: 500px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 12px;
-            color: #333;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            animation: slideInUp 0.8s ease-out;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-section .section-title {
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-section .section-title h2 {
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .form-group {
             margin-bottom: 20px;
+            color: var(--dark);
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 700;
             color: #333;
         }
 
         .form-group input,
         .form-group select {
             width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e8ebf7;
-            border-radius: 6px;
+            padding: 14px 16px;
+            border: 2px solid #e0e7ff;
+            border-radius: 8px;
             font-size: 1em;
             font-family: inherit;
-            transition: border-color 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
         }
 
         .form-container .btn {
             width: 100%;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
-        /* FAQ SECTION */
+        /* FAQ */
         .faq {
-            padding: 80px 0;
-            background: #f8f9fa;
+            padding: 100px 0;
+            background: white;
         }
 
         .faq-item {
             background: white;
             margin-bottom: 15px;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out backwards;
         }
 
+        .faq-item:nth-child(1) { animation-delay: 0s; }
+        .faq-item:nth-child(2) { animation-delay: 0.1s; }
+        .faq-item:nth-child(3) { animation-delay: 0.2s; }
+        .faq-item:nth-child(4) { animation-delay: 0.3s; }
+        .faq-item:nth-child(5) { animation-delay: 0.4s; }
+
         .faq-question {
-            padding: 20px;
+            padding: 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
-            transition: background 0.3s;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
         }
 
         .faq-question:hover {
-            background: #f8f9fa;
+            background: #f0f4ff;
+        }
+
+        .faq-item.active .faq-question {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
         }
 
         .faq-question::after {
             content: "▼";
             font-size: 0.8em;
-            color: #667eea;
-            transition: transform 0.3s;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+            font-weight: 700;
         }
 
         .faq-item.active .faq-question::after {
             transform: rotateZ(180deg);
+            color: white;
         }
 
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 25px;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             color: #666;
+            font-weight: 400;
         }
 
         .faq-item.active .faq-answer {
-            padding: 0 20px 20px 20px;
+            padding: 0 25px 25px 25px;
             max-height: 500px;
         }
 
         /* FOOTER */
         footer {
-            background: #333;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             color: #999;
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
         }
 
         footer p {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         footer strong {
@@ -499,22 +765,33 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .solution-grid,
+            .solutions-grid,
             .pricing-grid,
             .problems-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero-cta-buttons {
-                flex-direction: column;
+            .pricing-card.featured {
+                transform: scale(1);
             }
 
-            .section-title {
-                font-size: 1.8em;
+            .section-title h2 {
+                font-size: 2em;
             }
 
-            header nav {
-                display: none;
+            .form-container {
+                padding: 35px 25px;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
@@ -523,7 +800,7 @@
     <!-- HEADER -->
     <header>
         <div class="container">
-            <div class="logo">🔥 Fênix Ads</div>
+            <div class="logo">🔥 FÊNIX ADS</div>
             <nav>
                 <a href="#problema">Problema</a>
                 <a href="#solucao">Solução</a>
@@ -536,16 +813,23 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <h1>Apareça no Google em 7 dias</h1>
-            <p class="subheadline">Seu negócio sendo encontrado por clientes que estão procurando no Google, Maps e Instagram</p>
-            <div class="cta-buttons">
-                <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Descobrir Meu Plano</button>
-                <button class="btn btn-white">Conhecer Mais</button>
+            <div class="hero-content">
+                <h1>Apareça no Google em 7 dias</h1>
+                <p class="subheadline">Transforme seu negócio de invisível para encontrado. Mais clientes chegando direto no seu WhatsApp.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })">
+                        🚀 Descobrir Meu Plano
+                    </button>
+                    <button class="btn btn-secondary btn-lg" onclick="document.getElementById('problema').scrollIntoView({ behavior: 'smooth' })">
+                        📊 Ver Detalhes
+                    </button>
+                </div>
             </div>
-            <div class="hero-image">
-                <div style="background: rgba(255,255,255,0.2); padding: 40px; border-radius: 8px; text-align: center;">
-                    <p style="font-size: 3em;">📱 💼 🗺️</p>
-                    <p style="margin-top: 10px;">Google • Maps • Instagram</p>
+            <div class="hero-visual">
+                <div class="hero-box">
+                    <div class="hero-icon">📱</div>
+                    <h3 style="color: white; margin: 15px 0; font-size: 1.4em;">Google Maps</h3>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 0.95em;">Apareça no mapa quando procuram seu serviço</p>
                 </div>
             </div>
         </div>
@@ -554,33 +838,42 @@
     <!-- PROBLEMA -->
     <section class="problems" id="problema">
         <div class="container">
-            <h2 class="section-title">Qual é seu maior problema?</h2>
+            <div class="section-title">
+                <h2>Por que seu negócio está invisível?</h2>
+                <p>Esses são os problemas que clientes encontram</p>
+            </div>
             <div class="problems-grid">
                 <div class="problem-card">
-                    <h3>❌ Clientes não encontram você</h3>
-                    <p>Seu concorrente aparece no Google. Você fica invisível para 80% dos clientes que buscam no celular.</p>
+                    <div class="icon">🔍</div>
+                    <h3>Ninguém te acha no Google</h3>
+                    <p>Seu concorrente está no mapa e nas buscas. Você fica invisível para 80% dos clientes que procuram no celular.</p>
                 </div>
                 <div class="problem-card">
-                    <h3>❌ Poucos clientes chegam</h3>
-                    <p>Recebe só aqueles que alguém indica. Deixa muito dinheiro na mesa esperando por referência.</p>
+                    <div class="icon">📉</div>
+                    <h3>Poucos clientes chegam</h3>
+                    <p>Depende só de referência boca a boca. Enquanto isso, deixa muito dinheiro na mesa todos os dias.</p>
                 </div>
                 <div class="problem-card">
-                    <h3>❌ Não sabe por onde começar</h3>
-                    <p>Tentou algo que não funcionou. Não sabe se é site, anúncio, rede social ou o quê fazer primeiro.</p>
+                    <div class="icon">❌</div>
+                    <h3>Não sabe por onde começar</h3>
+                    <p>Tentou algo que não funcionou. Confuso sobre se precisa de site, anúncio ou rede social primeiro.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOLUÇÃO -->
+    <!-- SOLUÇÕES -->
     <section class="solutions" id="solucao">
         <div class="container">
-            <h2 class="section-title">A solução é simples</h2>
-            <div class="solution-grid">
+            <div class="section-title">
+                <h2>A solução é simples</h2>
+                <p>Três produtos que transformam seu negócio</p>
+            </div>
+            <div class="solutions-grid">
                 <div class="solution-card">
                     <div class="solution-icon">🗺️</div>
                     <h3>Google Meu Negócio</h3>
-                    <p style="color: #666; margin-bottom: 20px;">Apareça no mapa quando alguém procura por um negócio como o seu perto de casa</p>
+                    <p>Apareça no mapa quando alguém procura um negócio como o seu perto de casa.</p>
                     <ul class="solution-features">
                         <li>Seu endereço no Maps</li>
                         <li>Telefone e horário</li>
@@ -592,24 +885,24 @@
                 <div class="solution-card">
                     <div class="solution-icon">🌐</div>
                     <h3>Site Profissional</h3>
-                    <p style="color: #666; margin-bottom: 20px;">Um site que aparece no Google quando procuram pelo seu tipo de serviço</p>
+                    <p>Um site que aparece no Google quando procuram pelo seu tipo de serviço.</p>
                     <ul class="solution-features">
-                        <li>Site com design moderno</li>
-                        <li>Botão direto WhatsApp</li>
-                        <li>Domínio + hospedagem</li>
-                        <li>Otimizado para Google</li>
+                        <li>Design moderno e profissional</li>
+                        <li>Botão direto para WhatsApp</li>
+                        <li>Domínio + hospedagem por 1 ano</li>
+                        <li>Otimizado para Google (SEO)</li>
                     </ul>
                 </div>
 
                 <div class="solution-card">
                     <div class="solution-icon">📲</div>
                     <h3>Link na Bio</h3>
-                    <p style="color: #666; margin-bottom: 20px;">Um link que leva do Instagram para seu site e WhatsApp</p>
+                    <p>Um link único do Instagram que leva para seu site, WhatsApp e links importantes.</p>
                     <ul class="solution-features">
-                        <li>Link único na bio</li>
-                        <li>Seus links todos juntos</li>
-                        <li>Sem digitar WhatsApp</li>
-                        <li>Mais profissional</li>
+                        <li>Link único na bio do Instagram</li>
+                        <li>Todos seus links em um lugar</li>
+                        <li>Sem digitar WhatsApp manualmente</li>
+                        <li>Mais profissional e organizado</li>
                     </ul>
                 </div>
             </div>
@@ -619,7 +912,10 @@
     <!-- PREÇOS -->
     <section class="pricing" id="precos">
         <div class="container">
-            <h2 class="section-title">Escolha seu plano</h2>
+            <div class="section-title">
+                <h2>Escolha o plano certo</h2>
+                <p>Todos incluem suporte dedicado e garantia de satisfação</p>
+            </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>🎁 O Básico</h3>
@@ -627,27 +923,31 @@
                     <div class="price">R$ 297</div>
                     <p class="period">ou 3x R$ 99</p>
                     <ul>
-                        <li>Google Meu Negócio</li>
-                        <li>Link na Bio</li>
+                        <li>Google Meu Negócio completo</li>
+                        <li>Link na Bio customizado</li>
                         <li>Suporte por 30 dias</li>
                         <li>Entrega em 2-3 dias</li>
                     </ul>
-                    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Começar Agora</button>
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })">
+                        ✨ Começar Agora
+                    </button>
                 </div>
 
                 <div class="pricing-card featured">
-                    <h3>🎁 O Completo</h3>
+                    <h3>⭐ O Completo</h3>
                     <p class="subtitle">Google + Site + Link na Bio</p>
                     <div class="price">R$ 1.090</div>
                     <p class="period">ou 5x R$ 218</p>
                     <ul>
-                        <li>Google Meu Negócio</li>
-                        <li>Site Profissional</li>
-                        <li>Link na Bio</li>
+                        <li>Google Meu Negócio completo</li>
+                        <li>Site profissional + SEO</li>
+                        <li>Link na Bio customizado</li>
                         <li>Suporte por 90 dias</li>
                         <li>Entrega em 5-7 dias</li>
                     </ul>
-                    <button class="btn" onclick="document.getElementById('form').scrollIntoView()">Escolher Este</button>
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })">
+                        🚀 Escolher Este
+                    </button>
                 </div>
 
                 <div class="pricing-card">
@@ -656,12 +956,14 @@
                     <div class="price">R$ 79</div>
                     <p class="period">por mês</p>
                     <ul>
-                        <li>Domínio renovado</li>
-                        <li>Hospedagem ativa</li>
-                        <li>Suporte técnico</li>
-                        <li>Sem compromisso</li>
+                        <li>Domínio renovado todo ano</li>
+                        <li>Hospedagem sempre ativa</li>
+                        <li>Suporte técnico 24h</li>
+                        <li>Sem compromisso de duração</li>
                     </ul>
-                    <button class="btn btn-white" onclick="document.getElementById('form').scrollIntoView()">Contratar</button>
+                    <button class="btn btn-primary btn-lg" onclick="document.getElementById('form').scrollIntoView({ behavior: 'smooth' })">
+                        📞 Contratar
+                    </button>
                 </div>
             </div>
         </div>
@@ -670,28 +972,31 @@
     <!-- FORM -->
     <section class="form-section" id="form">
         <div class="container">
-            <h2 class="section-title">Qual plano é melhor para você?</h2>
+            <div class="section-title">
+                <h2>Qual plano é melhor para você?</h2>
+                <p>Responda 4 perguntas e começamos em 24 horas</p>
+            </div>
             <div class="form-container">
                 <form id="contactForm" onsubmit="handleSubmit(event)">
                     <div class="form-group">
-                        <label for="name">Seu Nome</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name">👤 Seu Nome</label>
+                        <input type="text" id="name" name="name" placeholder="João Silva" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Seu WhatsApp</label>
+                        <label for="phone">📱 Seu WhatsApp</label>
                         <input type="tel" id="phone" name="phone" placeholder="(85) 9 8888-8888" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="business">Tipo de Negócio</label>
-                        <input type="text" id="business" name="business" placeholder="Ex: Padaria, Dentista, Salão">
+                        <label for="business">🏪 Tipo de Negócio</label>
+                        <input type="text" id="business" name="business" placeholder="Ex: Padaria, Salão, Dentista">
                     </div>
 
                     <div class="form-group">
-                        <label for="city">Sua Cidade</label>
+                        <label for="city">📍 Sua Cidade</label>
                         <select id="city" name="city" required>
-                            <option value="">Selecione...</option>
+                            <option value="">Selecione sua cidade...</option>
                             <option value="limeira">Limeira</option>
                             <option value="americana">Americana</option>
                             <option value="piracicaba">Piracicaba</option>
@@ -700,17 +1005,9 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="plan">Qual plano?</label>
-                        <select id="plan" name="plan" required>
-                            <option value="">Selecione...</option>
-                            <option value="basico">O Básico - R$ 297</option>
-                            <option value="completo">O Completo - R$ 1.090</option>
-                            <option value="manutencao">Manutenção - R$ 79/mês</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn">Enviar para WhatsApp</button>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        💥 Enviar para WhatsApp
+                    </button>
                 </form>
             </div>
         </div>
@@ -719,40 +1016,43 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
-            <h2 class="section-title">Dúvidas Frequentes</h2>
+            <div class="section-title">
+                <h2>Dúvidas Frequentes</h2>
+                <p>Tudo que você precisa saber</p>
+            </div>
             <div style="max-width: 700px; margin: 0 auto;">
-                <div class="faq-item">
-                    <div class="faq-question">Quanto tempo até aparecer no Google?</div>
+                <div class="faq-item active">
+                    <div class="faq-question">⏰ Quanto tempo até aparecer no Google?</div>
                     <div class="faq-answer">
-                        <p>Google Meu Negócio: 3-7 dias. Site profissional: 15-30 dias. Mas seu negócio já começa a aparecer em buscas locais em poucos dias.</p>
+                        <p>Google Meu Negócio: 3-7 dias. Site profissional: 15-30 dias. Mas seu negócio já começa a aparecer em buscas locais em poucos dias após a configuração.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">E se não gostar?</div>
+                    <div class="faq-question">💰 E se não gostar do resultado?</div>
                     <div class="faq-answer">
-                        <p>Você tem 7 dias para pedir alterações. Se realmente não se encaixar, tem direito a reembolso completo. Sem pegadinha.</p>
+                        <p>Você tem 7 dias para pedir alterações sem custo adicional. Se realmente não encaixar, tem direito a reembolso completo. Sem pegadinha, sem letra pequena.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">Como é o suporte?</div>
+                    <div class="faq-question">📞 Como é o suporte?</div>
                     <div class="faq-answer">
-                        <p>Suporte via WhatsApp 24h. Você fala conosco no mesmo número que atendemos seus clientes. Resposta rápida e direta.</p>
+                        <p>Suporte via WhatsApp 24h. Você fala conosco no mesmo número que atendemos seus clientes. Resposta rápida e direta, sem esperar dias.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">Preciso saber tecnologia?</div>
+                    <div class="faq-question">🤖 Preciso saber tecnologia?</div>
                     <div class="faq-answer">
-                        <p>Não! A gente faz tudo. Você só precisa responder algumas perguntas e fornecer fotos/informações do seu negócio.</p>
+                        <p>Não! A gente faz tudo. Você só precisa responder algumas perguntas e fornecer informações básicas do seu negócio. Pronto, a gente cuida do resto.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <div class="faq-question">Que cidades atende?</div>
+                    <div class="faq-question">🌍 Que cidades você atende?</div>
                     <div class="faq-answer">
-                        <p>Limeira, Americana, Piracicaba, Campinas e região. Se sua cidade não está na lista, mande mensagem de qualquer forma.</p>
+                        <p>Limeira, Americana, Piracicaba, Campinas e região. Se sua cidade não está na lista, mande mensagem de qualquer forma. Talvez a gente consiga te atender.</p>
                     </div>
                 </div>
             </div>
@@ -762,9 +1062,9 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p><strong>Agência Fênix Ads</strong></p>
-            <p>Transformando pequenos negócios em presença online poderosa</p>
-            <p style="margin-top: 20px; font-size: 0.9em;">© 2026 Fênix Ads. Todos os direitos reservados.</p>
+            <p><strong>🔥 FÊNIX ADS - Transformando Pequenos Negócios em Presença Online Poderosa</strong></p>
+            <p>Limeira • Americana • Piracicaba • Campinas e Região</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">© 2026 Fênix Ads. Todos os direitos reservados. | <a href="#" style="color: #667eea; text-decoration: none;">Política de Privacidade</a></p>
         </div>
     </footer>
 
@@ -773,7 +1073,8 @@
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 const item = this.parentElement;
-                item.classList.toggle('active');
+                document.querySelectorAll('.faq-item').forEach(q => q.classList.remove('active'));
+                item.classList.add('active');
             });
         });
 
@@ -785,13 +1086,31 @@
             const phone = document.getElementById('phone').value;
             const business = document.getElementById('business').value;
             const city = document.getElementById('city').value;
-            const plan = document.getElementById('plan').value;
 
-            const message = `Olá! Meu nome é ${name}. Tenho um(a) ${business} em ${city}. Gostaria de saber mais sobre o plano: ${plan}. Meu WhatsApp: ${phone}`;
+            const message = `🔥 NOVO CLIENTE:\n\nNome: ${name}\nWhatsApp: ${phone}\nTipo de Negócio: ${business}\nCidade: ${city}\n\nVindo da landing page de vendas!`;
 
             const whatsappLink = `https://wa.me/5585988888888?text=${encodeURIComponent(message)}`;
             window.open(whatsappLink, '_blank');
         }
+
+        // Intersection Observer para animações
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-card, .solution-card, .pricing-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
